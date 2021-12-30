@@ -2,4 +2,4 @@ datlechin-signup-button:
   admin:
 
   forum:
-    sign_up: => core.ref.sign_up
+    sign_up: Đăng ký
