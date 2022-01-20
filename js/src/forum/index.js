@@ -13,7 +13,7 @@ app.initializers.add('datlechin/flarum-signup-button', () => {
     const classes = classList('Button', 'Button--primary', 'SignUpButton');
     const startDiscussion = document.querySelector('.fas.fa-edit');
 
-    if (typeof app.session.user !== 'undefined') return;
+    if (app.session.user !== null) return;
 
     startDiscussion ? startDiscussion.classList.remove('.IndexPage-newDiscussion>fa-edit') : null;
     startDiscussion ? startDiscussion.classList.add('fa-sign-in-alt') : null;
@@ -30,5 +30,6 @@ app.initializers.add('datlechin/flarum-signup-button', () => {
       ),
       100
     );
+
   });
 });
