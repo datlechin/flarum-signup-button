@@ -2,8 +2,6 @@ import app from 'flarum/forum/app';
 import { extend } from 'flarum/common/extend';
 import Button from 'flarum/common/components/Button';
 import classList from 'flarum/common/utils/classList';
-import SignUpModal from 'flarum/forum/components/SignUpModal';
-
 const packagePrefix = 'datlechin-signup-button.';
 const translationPrefix = packagePrefix + 'forum.';
 
@@ -18,7 +16,7 @@ app.initializers.add('datlechin/flarum-signup-button', () => {
       Button.component(
         {
           className: classes,
-          onclick: () => app.modal.show(SignUpModal),
+          onclick: () => app.modal.show(() => import('flarum/forum/components/SignUpModal')),
         },
         app.translator.trans(translationPrefix + 'sign_up')
       ),
